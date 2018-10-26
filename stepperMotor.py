@@ -12,8 +12,8 @@ class StepperMotor(object):
         self.pulse = OutputDevice(pulseGPIO)
         self.currentAngle = 0;
         
-    def rotate_deg(deg):
-        numSteps = deg * STEPS_PER_DEG
+    def rotate_deg(self,deg):
+        numSteps = int(deg * self.STEPS_PER_DEG)
     
         for i in range(0,numSteps):
             self.pulse.on()

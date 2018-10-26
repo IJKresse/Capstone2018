@@ -12,9 +12,8 @@ dir.on()
 
 for i in range(0,200):
     pulse.on()
-    sleep(0.001)
+    sleep(0.0005)
     pulse.off()
-    sleep(0.001)
 
 def rotate_deg(deg,motor):
     numSteps = deg * STEPS_PER_DEG
