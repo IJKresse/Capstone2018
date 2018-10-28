@@ -18,11 +18,6 @@ GPIO.setup(17, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 begin_revolution_time = time.time()
 
-<<<<<<< HEAD
-#wrapping in try except will ensure keyboard interrupts
-=======
-#wrapping in try catch will ensure keyboard interrupts
->>>>>>> 2e774ec1e7631c902b6d1d3421e8797bfe352213
 #clean up GPIO pins, but it's a performance hit and I
 #don't think it's really important
 #try:
