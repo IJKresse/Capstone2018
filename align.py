@@ -5,8 +5,8 @@ from HallSensor import HallSensor
 # 1. spin at 1000RPM or whatever to spin coat
 # 2. either let it coast or brake then dynamChangeSpeed,
 #        or skip straight to dynamChangeSpeed to get slow rotation
-# 3. Once dynamChangeSpeed finishes and the board is spinning slowly
-#        
+# 3. Once dynamChangeSpeed finishes and the board is spinning slowly,
+#        wait for a rising edge from the Hall sensor, then brake hard.     
 
 #set up the hall sensor class for later
 Hall = HallSensor(17)
