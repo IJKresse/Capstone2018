@@ -16,6 +16,6 @@ sleep(1)
 #prog.PCBMotor.spinAtSpeed()
 #prog.PCBMotor.speed = 1;
 #sleep(20)
-prog.prog1()
+#prog.prog1()
 
 GPIO.cleanup()
