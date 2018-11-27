@@ -15,7 +15,7 @@ class LeadMotor(StepperMotor):
     def moveUpDown(self,dz):
         self.heightPerDeg = self.HEIGHT_PER_REV/self.stepsPerDeg
         numDeg = dz/self.heightPerDeg
-        
+        print(numDeg)
         self.rotate_deg(numDeg)
         #self.currentHeight = self.currentHeight + dz
         

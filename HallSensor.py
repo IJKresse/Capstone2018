@@ -42,3 +42,7 @@ class HallSensor(object):
             #call other functions or whatever here
     
             #GPIO.cleanup()
+
+    def wait_til_aligned(self):
+            GPIO.wait_for_edge(self.inPin, GPIO.RISING)
+            
