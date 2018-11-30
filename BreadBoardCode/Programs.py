@@ -9,10 +9,10 @@ from ImageDisplay import Display
 class Program(object):
 
     def __init__(self):
-        self.Hall = HallSensor(11)
+        self.Hall = HallSensor(17)
         self.BeakerMotor = StepperMotor(23,22,0.35)
         self.zMotor = LeadMotor(18,14,1.8)
-        self.PCBMotor = DCMotor(24,25,26,27,3)
+        self.PCBMotor = DCMotor(27,3,4)
 
 
     def align(self):

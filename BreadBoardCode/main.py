@@ -15,8 +15,7 @@ sleep(1)
 #sleep(5)
 #prog.PCBMotor.spinAtSpeed()
 #prog.PCBMotor.speed = 1;
-#prog.PCBMotor.dynamChangeSpeed(prog.Hall, 1000, 10)
 #sleep(20)
 #prog.prog1()
 
-#GPIO.cleanup()
+GPIO.cleanup()

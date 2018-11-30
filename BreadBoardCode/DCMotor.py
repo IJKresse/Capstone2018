@@ -6,21 +6,17 @@ from time import time
 class DCMotor(object):
     MAX_RPM = 10000
     
-    def __init__(self, disGPIO, ahiGPIO, aliGPIO, bhiGPIO, bliGPIO):
-        self.dis = OutputDevice(disGPIO)
-        self.bli = OutputDevice(bliGPIO)
-        self.ahi = OutputDevice(ahiGPIO)
-        self.bhi = OutputDevice(bhiGPIO)
-        self.pwm = PWMOutputDevice(aliGPIO,1000)
+    def __init__(self, aGPIO, bGPIO, pwmGPIO):
+        self.a = OutputDevice(aGPIO)
+        self.b = OutputDevice(bGPIO)
+        self.pwm = PWMOutputDevice(pwmGPIO,1000)
         self.speed = 0.5;
         self.rpm = 100;
         self.maxRPM = 10000
         
     def spinAtSpeed(self):
-        self.dis.off()
-        self.bli.off()
-        self.bhi.on()
-        self.ahi.off()
+        self.a.on()
+        self.b.off()
         self.pwm.on()
         self.pwm.value = self.speed
 
@@ -32,16 +28,13 @@ class DCMotor(object):
         self.spinAtSpeed()       
     
     def stop(self):
-        self.ali.off()
-        self.bli.off()
-        self.dis.on()
+        self.a.off()
+        self.b.off()
         self.pwm.on()
         self.rpm = 0
 
     def stopQuickly(self):
-        self.dis.off()
-        self.pwm.on()
-        self.bli.on()
+        self.pwm.value = 1
         self.speed = 1
         self.stop()
         
