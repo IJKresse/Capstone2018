@@ -8,7 +8,8 @@ from Programs import Program
 from time import sleep
 
 prog = Program()
-prog.zMotor.moveUpDown(200)
+#prog.zMotor.moveUpDown(200)
+prog.BeakerMotor.rotate_deg(200)
 sleep(1)
 #prog.PCBMotor.spinAtSpeed()
 #prog.PCBMotor.stop()

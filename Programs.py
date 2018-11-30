@@ -4,6 +4,7 @@ from stepperMotor import StepperMotor
 from leadMotor import LeadMotor
 from time import sleep
 from ImageDisplay import Display
+from HDMI import HDMIOutput
 
 
 class Program(object):
@@ -13,6 +14,7 @@ class Program(object):
         self.BeakerMotor = StepperMotor(23,22,0.35)
         self.zMotor = LeadMotor(18,14,1.8)
         self.PCBMotor = DCMotor(24,25,26,27,3)
+        self.HDMIswitch = HDMIOutput(4)
 
 
     def align(self):
@@ -55,7 +57,9 @@ class Program(object):
 
     def prog1(self):
         # Photopolymer
+        self.HDMIswitch.switchToProjector()
         self.spinCoatExpose()
+        self.HDMIswitch.switchtoMonitor()
 
         # Wash w/ IPA
         #self.BeakerMotor.rotate_pos(1)
